@@ -12,21 +12,18 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
   background: image-url('fundo.jpg') repeat #d1d5d8;
 }
-
-/*
-*= require_tree .
-*= require_self
-*= require bootstrap-datepicker
-*/
-@import "bootstrap-sprockets";
-@import "bootstrap";
-body {
- background: image-url('linen.jpg?v=0382.14157') repeat #d1d5d8;
-}
+// body {
+//  background: image-url('linen.jpg?v=0382.14157') repeat #d1d5d8;
+// }
 table {
  width: 100%;
 }
