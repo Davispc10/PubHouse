@@ -2,7 +2,6 @@
   <% if fornecedor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h2>
-
       <ul>
       <% fornecedor.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,27 +10,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
-  </div>
+  <div class="container">
+    <div class="col-md-4">
+      <div class="panel-body">
+        <div class="field">
+          <%= f.label :nome %>
+          <%= f.text_field :nome %>
+        </div>
 
-  <div class="field">
-    <%= f.label :cnpj %>
-    <%= f.text_field :cnpj %>
-  </div>
+        <div class="field">
+          <%= f.label :cnpj %>
+          <%= f.text_field :cnpj %>
+        </div>
 
-  <div class="field">
-    <%= f.label :telefone %>
-    <%= f.text_field :telefone %>
-  </div>
+        <div class="field">
+          <%= f.label :telefone %>
+          <%= f.text_field :telefone %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+      <div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>

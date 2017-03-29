@@ -22,7 +22,7 @@
 
 <p>
   <strong>Foto:</strong>
-  <%= @produto.foto %>
+  <%= image_tag @produto.foto, height: '200', width: '200'%>
 </p>
 
 <%= link_to 'Edit', edit_produto_path(@produto) %> |

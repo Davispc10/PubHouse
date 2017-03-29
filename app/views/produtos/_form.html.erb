@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_field :descricao %>
+  <div class="input-group">
+    <!-- <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"> -->
+    <div class="field">
+      <%= f.label :descricao %>
+      <%= f.text_field :descricao, class: "form-control" %>
+    </div>
   </div>
 
   <div class="field">
@@ -26,17 +29,30 @@
     <%= f.text_field :preco %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :nacionalidade %>
-    <%= f.text_field :nacionalidade %>
+    <%= f.text_field :nacionalidade, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :foto %>
-    <%= f.text_field :foto %>
+    <%= f.label :fornecedor %><br>
+    <%= f.select :fornecedor_id, options_for_select(Fornecedor.all.map{ |m| [m.nome, m.id]}, f.object.fornecedor) %>
   </div>
+
+  <!-- <div class="field"> -->
+    <!-- <%= f.label :foto %> -->
+    <!-- <%= f.text_field :foto %> -->
+  <!-- </div> -->
+
+  <div>
+    <%= f.label :foto %>
+    <%= image_tag @produto.foto_url, class: 'foto' if @produto.foto? %>
+    <%= f.file_field :foto, label: 'Foto' , input_html: {accept: ('application/jpg') } %>
+    <br/>
+  </div>
+
 
   <div class="actions">
-    <%= f.submit %>
+  <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
   </div>
 <% end %>

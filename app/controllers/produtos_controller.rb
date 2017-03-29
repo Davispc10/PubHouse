@@ -4,7 +4,14 @@ class ProdutosController < ApplicationController
   # GET /produtos
   # GET /produtos.json
   def index
-    @produtos = Produto.all
+    @pdescricao = params[:pdescricao]
+    filtro = "1=1"
+
+    if @pdescricao != nil
+      filtro = filtro + " and descricao like '%" + @pdescricao + "%'"
+    end
+
+    @produtos = Produto.where(filtro).order("descricao").paginate(page:params[:page], per_page: 3)
   end
 
   # GET /produtos/1
@@ -69,6 +76,6 @@ class ProdutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def produto_params
-      params.require(:produto).permit(:descricao, :marca, :preco, :nacionalidade, :foto)
+      params.require(:produto).permit(:descricao, :marca, :preco, :nacionalidade, :foto, :fornecedor_id)
     end
 end

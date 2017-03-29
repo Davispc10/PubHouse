@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Produtos</h1>
-
-<table>
+<%= render 'formbusca' %>
+<table class="table">
   <thead>
     <tr>
       <th>Descricao</th>
@@ -21,15 +21,24 @@
         <td><%= produto.marca %></td>
         <td><%= produto.preco %></td>
         <td><%= produto.nacionalidade %></td>
-        <td><%= produto.foto %></td>
-        <td><%= link_to 'Show', produto %></td>
-        <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-        <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag produto.foto, height: '60', width: '60' %></td>
+        <br/>
+        <td class="btn-group">
+          <%= link_to 'Ver', produto, class: "btn btn-primary" %>
+          <%= link_to 'Editar', edit_produto_path(produto), class: "btn btn-default" %>
+          <%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+        </td>
       </tr>
     <% end %>
+    <td> <%= will_paginate @produtos, previous_label: "Anterior", next_label: "Próxima" %></td>
   </tbody>
 </table>
 
+<!-- <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div> -->
 <br>
 
-<%= link_to 'New Produto', new_produto_path %>
+<%= link_to 'Novo cadastro', new_produto_path, class: "btn btn-default" %>
