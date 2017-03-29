@@ -9,6 +9,7 @@
       <th>Marca</th>
       <th>Preco</th>
       <th>Nacionalidade</th>
+      <th>Fornecedor</th>
       <th>Foto</th>
       <th colspan="3"></th>
     </tr>
@@ -21,6 +22,7 @@
         <td><%= produto.marca %></td>
         <td><%= produto.preco %></td>
         <td><%= produto.nacionalidade %></td>
+        <td><%= produto.fornecedor.nome %></td>
         <td><%= image_tag produto.foto, height: '60', width: '60' %></td>
         <br/>
         <td class="btn-group">

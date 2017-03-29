@@ -1,28 +1,28 @@
-class FornecedorsController < ApplicationController
+class FornecedoresController < ApplicationController
   before_action :set_fornecedor, only: [:show, :edit, :update, :destroy]
 
-  # GET /fornecedors
-  # GET /fornecedors.json
+  # GET /fornecedores
+  # GET /fornecedores.json
   def index
-    @fornecedors = Fornecedor.all
+    @fornecedores = Fornecedor.all
   end
 
-  # GET /fornecedors/1
-  # GET /fornecedors/1.json
+  # GET /fornecedores/1
+  # GET /fornecedores/1.json
   def show
   end
 
-  # GET /fornecedors/new
+  # GET /fornecedores/new
   def new
     @fornecedor = Fornecedor.new
   end
 
-  # GET /fornecedors/1/edit
+  # GET /fornecedores/1/edit
   def edit
   end
 
-  # POST /fornecedors
-  # POST /fornecedors.json
+  # POST /fornecedores
+  # POST /fornecedores.json
   def create
     @fornecedor = Fornecedor.new(fornecedor_params)
 
@@ -37,8 +37,8 @@ class FornecedorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fornecedors/1
-  # PATCH/PUT /fornecedors/1.json
+  # PATCH/PUT /fornecedores/1
+  # PATCH/PUT /fornecedores/1.json
   def update
     respond_to do |format|
       if @fornecedor.update(fornecedor_params)
@@ -51,12 +51,12 @@ class FornecedorsController < ApplicationController
     end
   end
 
-  # DELETE /fornecedors/1
-  # DELETE /fornecedors/1.json
+  # DELETE /fornecedores/1
+  # DELETE /fornecedores/1.json
   def destroy
     @fornecedor.destroy
     respond_to do |format|
-      format.html { redirect_to fornecedors_url, notice: 'Fornecedor was successfully destroyed.' }
+      format.html { redirect_to fornecedores_url, notice: 'Fornecedor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

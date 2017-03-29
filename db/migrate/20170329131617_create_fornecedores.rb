@@ -1,6 +1,6 @@
-class CreateFornecedors < ActiveRecord::Migration[5.0]
+class CreateFornecedores < ActiveRecord::Migration[5.0]
   def change
-    create_table :fornecedors do |t|
+    create_table :fornecedores do |t|
       t.string :nome
       t.string :cnpj
       t.string :telefone

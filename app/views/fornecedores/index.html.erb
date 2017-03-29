@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <h1>Fornecedores</h1>
-
 
 <table>
   <thead>
@@ -17,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @fornecedors.each do |fornecedor| %>
+    <% @fornecedores.each do |fornecedor| %>
       <tr>
         <td><%= fornecedor.nome %></td>
         <td><%= fornecedor.cnpj %></td>
@@ -30,6 +27,7 @@
     <% end %>
   </tbody>
 </table>
+
 <br>
 
 <%= link_to 'New Fornecedor', new_fornecedor_path %>
