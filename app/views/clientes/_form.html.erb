@@ -11,33 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
-  </div>
+  <div class="input-group">
+    <div class="field">
+      <%= f.label :nome %>
+      <%= f.text_field :nome, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :cpf %>
-    <%= f.text_field :cpf %>
-  </div>
+    <div class="field">
+      <%= f.label :cpf %>
+      <%= f.text_field :cpf, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :telefone %>
-    <%= f.text_field :telefone %>
-  </div>
+    <div class="field">
+      <%= f.label :telefone %>
+      <%= f.text_field :telefone, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :endereco %>
-    <%= f.text_field :endereco %>
-  </div>
+    <div class="field">
+      <%= f.label :endereco %>
+      <%= f.text_field :endereco, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :dataNascimento %>
-    <%= f.text_field :dataNascimento, "data-provide" => 'datepicker' %>
-    <!-- <%= f.text_field :dataNascimento %> -->
+    <div class="field">
+      <%= f.label :dataNascimento %>
+      <%= f.text_field :dataNascimento, "data-provide" => 'datepicker' %>
+      <!-- <%= f.text_field :dataNascimento %> -->
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
 <% end %>

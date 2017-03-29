@@ -22,9 +22,9 @@
         <td><%= cliente.telefone %></td>
         <td><%= cliente.endereco %></td>
         <td><%= cliente.dataNascimento %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', cliente, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_cliente_path(cliente), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Cliente', new_cliente_path %>
+<%= link_to 'Novo cliente', new_cliente_path, class: "btn btn-success" %>

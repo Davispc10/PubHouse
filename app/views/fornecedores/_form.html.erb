@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
-  </div>
+  <div class="input-group">
+    <div class="field">
+      <%= f.label :nome %>
+      <%= f.text_field :nome, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :cnpj %>
-    <%= f.text_field :cnpj %>
-  </div>
+    <div class="field">
+      <%= f.label :cnpj %>
+      <%= f.text_field :cnpj, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :telefone %>
-    <%= f.text_field :telefone %>
-  </div>
+    <div class="field">
+      <%= f.label :telefone %>
+      <%= f.text_field :telefone, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', :class => 'btn btn-success' %>
   </div>
 <% end %>
