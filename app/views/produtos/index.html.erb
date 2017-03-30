@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Produtos</h1>
+<br>
 <%= render 'formbusca' %>
 <table class="table">
   <thead>
@@ -25,7 +26,7 @@
         <td><%= produto.fornecedor.nome %></td>
         <td><%= image_tag produto.foto, height: '60', width: '60' %></td>
         <br/>
-        <td class="btn-group">
+        <td>
           <%= link_to 'Ver', produto, class: "btn btn-info" %>
           <%= link_to 'Editar', edit_produto_path(produto), class: "btn btn-warning" %>
           <%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

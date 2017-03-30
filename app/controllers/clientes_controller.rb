@@ -4,7 +4,14 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.all
+    @pcpf = params[:pcpf]
+    filtro = "1=1"
+
+    if @pcpf != nil
+      filtro = filtro + " and cpf like '%" + @pcpf + "%'"
+    end
+
+    @clientes = Cliente.where(filtro).order("cpf").paginate(page:params[:page], per_page: 5)
   end
 
   # GET /clientes/1

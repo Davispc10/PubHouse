@@ -1,0 +1,5 @@
+<%= form_tag(fornecedores_path, method: "get") do %>
+<%= label_tag(:pcnpj, "CNPJ:") %>
+<%= text_field_tag(:pcnpj, @pcnpj) %>
+<%= submit_tag 'Filtrar', class: "btn btn-default" %>
+<% end %>

@@ -11,7 +11,7 @@ class ProdutosController < ApplicationController
       filtro = filtro + " and descricao like '%" + @pdescricao + "%'"
     end
 
-    @produtos = Produto.where(filtro).order("descricao").paginate(page:params[:page], per_page: 3)
+    @produtos = Produto.where(filtro).order("descricao").paginate(page:params[:page], per_page: 5)
   end
 
   # GET /produtos/1

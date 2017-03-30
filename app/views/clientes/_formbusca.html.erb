@@ -1,0 +1,5 @@
+<%= form_tag(clientes_path, method: "get") do %>
+<%= label_tag(:pcpf, "CPF:") %>
+<%= text_field_tag(:pcpf, @pcpf) %>
+<%= submit_tag 'Filtrar', class: "btn btn-default" %>
+<% end %>

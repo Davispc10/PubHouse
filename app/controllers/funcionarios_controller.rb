@@ -4,7 +4,14 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios
   # GET /funcionarios.json
   def index
-    @funcionarios = Funcionario.all
+      @pnome = params[:pnome]
+      filtro = "1=1"
+
+      if @pnome != nil
+        filtro = filtro + " and nome like '%" + @pnome + "%'"
+      end
+
+      @funcionarios = Funcionario.where(filtro).order("nome").paginate(page:params[:page], per_page: 5)
   end
 
   # GET /funcionarios/1

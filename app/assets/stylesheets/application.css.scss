@@ -28,17 +28,11 @@ table {
   width: 90%;
   background-color: rgba(8, 20, 30, 0.7);
   color: white;
-  align: center;
-  margin: auto;
 }
 td {
   align: center;
   margin: auto;
   padding: 30px;
-}
-thead {
-  padding: 30px;
-  margin: auto;
 }
 
 .white {
@@ -61,8 +55,19 @@ thead {
   height: 50px;
 }
 
-h2 {
+h2, h1 {
   color: white;
   font-weight: bold;
   font-size: 40px;
+}
+
+#bemvindo {
+  color: black;
+  font-style: normal;
+}
+
+footer {
+  margin-top: 40px;
+  color: white;
+  font-weight: bold;
 }

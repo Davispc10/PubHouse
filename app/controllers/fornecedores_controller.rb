@@ -4,7 +4,14 @@ class FornecedoresController < ApplicationController
   # GET /fornecedores
   # GET /fornecedores.json
   def index
-    @fornecedores = Fornecedor.all
+    @pcnpj = params[:pcnpj]
+    filtro = "1=1"
+
+    if @pcnpj != nil
+      filtro = filtro + " and cnpj like '%" + @pcnpj + "%'"
+    end
+
+    @fornecedores = Fornecedor.where(filtro).order("cnpj").paginate(page:params[:page], per_page: 5)
   end
 
   # GET /fornecedores/1
